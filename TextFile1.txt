@@ -1,0 +1,3 @@
+-Web Apý failed to load hatasý alýyorsun
+- Database ile connection error verdi
+- Authorization iþlemini yapman kaldý.

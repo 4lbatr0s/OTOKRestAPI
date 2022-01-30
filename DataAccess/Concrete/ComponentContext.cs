@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
@@ -12,8 +13,13 @@ namespace DataAccess.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) //this method decides to what database our project is based on.
         {
             //  @ helps visual studio to understand "\" as "\", otherwise we should use "\\" instead of "\". Because "\" has a syntatic meaning in C#
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=OtokDB;Trusted_Connection=true");
 
         }
+
+
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Component> Components { get; set; }
+        public DbSet<ComponentImage> ComponentImages { get; set; }
     }
 }
