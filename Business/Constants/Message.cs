@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,5 +18,6 @@ namespace Business.Constants
         public static string ComponentImageAdded { get; internal set; }
         public static string CarImageDeleted { get; internal set; }
         public static string ComponentImageUpdated { get; internal set; }
+        public static string AuthorizationDenied { get; internal set; }
     }
 }
