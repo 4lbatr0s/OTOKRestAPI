@@ -7,6 +7,8 @@ using DataAccess.Concrete;
 using DataAccess.Abstract;
 using Core.Utilities.Helpers;
 using Core.Utilities.Interceptors;
+using DataAccess.Concrete.EntityFramework;
+using Core.Utilities.Security.JWT;
 
 namespace Business.DependencyResolvers.Autofac
 {
@@ -23,6 +25,12 @@ namespace Business.DependencyResolvers.Autofac
 
             containerBuilder.RegisterType<ComponentImageManager>().As<IComponentImageService>().SingleInstance();
             containerBuilder.RegisterType<EfComponentDal>().As<IComponentDal>().SingleInstance();
+
+            containerBuilder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
+            containerBuilder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
+
+            containerBuilder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+            containerBuilder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
 
             containerBuilder.RegisterType<FileHelper>().As<IFileHelper>().SingleInstance();
 
